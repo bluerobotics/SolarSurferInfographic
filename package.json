@@ -1,0 +1,35 @@
+{
+  "name": "SolarSurferInfographic",
+  "version": "0.1.0",
+  "description": "Live, public-facing information source for the SolarSurfer project.",
+  "scripts": {
+    "preinstall": "rm -rf node_modules bower_components",
+    "postinstall": "node_modules/bower/bin/bower install --config.interactive=false",
+    "start": "node_modules/brunch/bin/brunch watch --server --port 5555",
+    "build": "rm -rf _public; node_modules/brunch/bin/brunch build",
+    "upload": "ssh surfer.bluerobotics.com 'rm -rf ~/surfer.bluerobotics.com/*'; scp -r _public/. surfer.bluerobotics.com:~/surfer.bluerobotics.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bluerobotics/SolarSurferInfographic.git"
+  },
+  "author": "BlueRobotics",
+  "license": "Apache v2",
+  "bugs": {
+    "url": "https://github.com/bluerobotics/SolarSurferInfographic/issues"
+  },
+  "homepage": "https://github.com/bluerobotics/SolarSurferInfographic",
+  "dependencies": {
+    "aang-template-brunch": "~1.7.6",
+    "after-brunch": "0.0.4",
+    "auto-reload-brunch": ">= 1.0 < 1.8",
+    "bower": "^1.3.5",
+    "brunch": "~1.7",
+    "clean-css-brunch": ">= 1.0 < 1.8",
+    "css-brunch": ">= 1.0 < 1.8",
+    "javascript-brunch": ">= 1.0 < 1.8",
+    "less-brunch": ">= 1.0 < 1.8",
+    "uglify-js-brunch": ">= 1.0 < 1.8"
+  },
+  "devDependencies": {}
+}
