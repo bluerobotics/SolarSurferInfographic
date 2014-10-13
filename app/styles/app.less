@@ -15,7 +15,7 @@ html {
 
 body {
   padding-top: @navbar-height;
-  margin-bottom: @footer-height + 20px;
+  margin-bottom: @footer-height;
 }
 
 #footer {
@@ -59,11 +59,19 @@ body {
 
 .page-home {
   div.section {
-    min-height: 600px;
+    min-height: 400px;
 
     // adjust anchor scroll location because of fixed navbar
     padding-top: @anchor-fix-height;
     margin-top: -@anchor-fix-height;
+    padding-bottom: 15px;
+  }
+
+  #map, #graph {
+    height: 100vh;
+    .section-heading {
+      display: none;
+    }
   }
 
   div.divider {
@@ -71,12 +79,14 @@ body {
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
+    margin: 0 -15px;
+    // margin: 2*@body-content-padding -15px;
     @shadow-shade: 255;
     @shadow-alpha: 1;
     @shadow-size: 20px;
     @shadow-blur: @shadow-size;
     @shadow-spread: -5px;
-    margin: 2*@body-content-padding -15px;
+    // transform: translateZ(2);
     // box-shadow: inset 0 -@shadow-size @shadow-blur @shadow-spread rgba(@shadow-shade,@shadow-shade,@shadow-shade,@shadow-alpha);
     
     div {
